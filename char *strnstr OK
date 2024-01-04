@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+char *strnstr(const char *big, const char *little, size_t len)
+{
+    size_t blen = 0;
+    size_t llen = 0;
+    size_t pos = 0;
+
+    if (little == NULL)
+        return (char *)big;
+
+    while (big[blen] != '\0' && blen < len)
+    {
+        if (big[blen] == little[llen])
+        {
+            pos = blen; // Save the current position
+            while (little[llen] != '\0' && big[blen] == little[llen] && blen < len)
+            {
+                blen++;
+                llen++;
+            }
+            if (little[llen] == '\0')
+                return (char *)big + pos; // Found the substring
+            blen = pos + 1; // Resume searching from the next position
+            llen = 0;       // Reset the substring index
+        }
+        else
+        {
+            blen++;
+        }
+    }
+    return NULL;
+}
+
+int main()
+{
+    char s1[8] = "Bantera";
+    char s2[3] = "te";
+    size_t len = 16;
+
+    char *result = strnstr(s1, s2, len);
+    if (result != NULL)
+    {
+        printf("%s", result);
+    }
+    else
+    {
+        printf("Substring not found\n");
+    }
+
+    return 0;
+}
