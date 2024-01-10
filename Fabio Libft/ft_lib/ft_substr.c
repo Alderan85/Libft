@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 16:15:56 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/10 17:42:25 by fabnenci         ###   ########.fr       */
+/*   Created: 2024/01/10 15:21:56 by fabnenci          #+#    #+#             */
+/*   Updated: 2024/01/10 16:01:37 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	while (*s)
-	{
-		if (*s == c)
-		{
-			return((char *)c);
-			s++;
-		}
+	char	*tmp;
+	int	i;
 
-	}
-	if (c == '\0')
-		return((char *)c);
-	return(0);
+	i = 0;
+
+	if(!s)
+	return(NULL);
+
+	if (start > ft_strlen(s))
+		return(NULL);
+
+	tmp = (char*) malloc(sizeof(*s) * (len + 1));
+
+	while (i < len)
+		{
+			tmp[i] = s[start + i];
+			i++;
+		}
+	tmp[i] = '\0';
+	return(tmp);
 }
-/*
+
 int	main()
 {
-	char	*s;
-	int	c;
+	char	src[7] = "banana";
+	char	dest[7] = "";
 
-	s = "banana";
-	c = 110;
-
-	printf("%s", ft_strchr(s,c));
+	printf("%s",ft_substr(src, 3, 2));
 }
-*/

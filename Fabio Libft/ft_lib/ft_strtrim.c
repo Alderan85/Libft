@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 16:15:56 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/10 17:42:25 by fabnenci         ###   ########.fr       */
+/*   Created: 2024/01/10 16:35:04 by fabnenci          #+#    #+#             */
+/*   Updated: 2024/01/10 17:38:41 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	charcheck(const char *set, char a)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	while ( set[i] != '\0' )
 	{
-		if (*s == c)
-		{
-			return((char *)c);
-			s++;
-		}
-
+		if (set[i] == a)
+			{
+				return (1);
+			}
 	}
-	if (c == '\0')
-		return((char *)c);
-	return(0);
+	return (0);
 }
-/*
-int	main()
+
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*s;
-	int	c;
+	int	i;
+	int	y;
 
-	s = "banana";
-	c = 110;
+	i = 0;
+	y = 0;
+if(!set)
+	return(ft_strdup());
 
-	printf("%s", ft_strchr(s,c));
+	while(charcheck(set, s1[i]))
+	{
+		i++;
+	}
 }
-*/
