@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fane <fane@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:35:04 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/11 19:11:23 by fane             ###   ########.fr       */
+/*   Updated: 2024/01/22 18:06:22 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ int	charcheck(const char *set, char a)
 	int	i;
 
 	i = 0;
-
-	while ( set[i] != '\0' )
+	while (set[i] != '\0' )
 	{
-		if(set[i] == a)
-			return(1);
+		if (set[i] == a)
+			return (1);
 		i++;
 	}
 	return (0);
@@ -29,10 +28,10 @@ int	charcheck(const char *set, char a)
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	int	i;
-	int	y;
-	int	len;
-	char *trm;
+	char	*trm;
+	int		i;
+	int		y;
+	int		len;
 
 	len = ft_strlen(s1);
 	i = 0;
@@ -40,25 +39,18 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (i < len && charcheck(set, s1[i]))
 	{
 		i++;
-
 	}
-
-	while (len > i && charcheck(set, s1[len - 1] ))
+	while (len > i && charcheck(set, s1[len - 1]))
 	{
 		len--;
 	}
-
 	trm = malloc(sizeof(char) * (len - i + 1));
-
-	while(i < len)
+	while (i < len)
 	{
 		trm[y++] = s1[i++];
 	}
-
 	trm[y] = '\0';
-
-	return(trm);
-
+	return (trm);
 }
 /*
 int	main()

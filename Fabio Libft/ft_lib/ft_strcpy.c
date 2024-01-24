@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabnenci <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:30:56 by fane              #+#    #+#             */
-/*   Updated: 2023/11/10 16:44:35 by fane             ###   ########.fr       */
+/*   Updated: 2024/01/22 17:24:49 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)

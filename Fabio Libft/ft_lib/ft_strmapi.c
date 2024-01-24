@@ -6,7 +6,7 @@
 /*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:34:07 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/19 15:01:57 by fabnenci         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:05:34 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char	*str;
+	char			*str;
 
 	i = 0;
-
 	str = malloc(sizeof(char) * (ft_strlen(s)) + 1);
-
 	while (s[i] != '\0')
 	{
 		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
-
 	return (str);
 }
 /*

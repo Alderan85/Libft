@@ -6,7 +6,7 @@
 /*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 15:29:46 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/19 15:39:36 by fabnenci         ###   ########.fr       */
+/*   Updated: 2024/01/22 17:21:20 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(nl / 10, fd);
 	ft_putchar_fd(((nl % 10) + '0'), fd);
 }
-
-
-
 /*
  int main(void)
  {

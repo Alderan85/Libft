@@ -6,7 +6,7 @@
 /*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 11:45:42 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/10 17:38:41 by fabnenci         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:00:12 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_bzero(void *b, size_t len)
 {
-	unsigned char *tmp;
-	 tmp = (unsigned char *) b;
+	unsigned char	*tmp;
 
+	tmp = (unsigned char *) b;
 	while (len > 0)
 	{
 		*tmp++ = 0;

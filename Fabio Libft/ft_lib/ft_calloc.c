@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fane <fane@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 17:04:03 by fane              #+#    #+#             */
-/*   Updated: 2024/01/09 17:16:04 by fane             ###   ########.fr       */
+/*   Created: 2024/01/09 17:04:03 by fabnenci          #+#    #+#             */
+/*   Updated: 2024/01/22 18:00:36 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-void    *ft_calloc(size_t count, size_t size)
+
+void	*ft_calloc(size_t count, size_t size)
 {
-    unsigned char *tmp;
-    size_t i;
-    size_t total;
-    total = count * size;
-    i = 0;
-    
+	unsigned char	*tmp;
+	size_t			i;
+	size_t			total;
 
-    tmp = malloc(total);
-    if (!tmp)
-        return(NULL);
-
-    while (i < total)
-    {
-        tmp[i] = 0;
-        i++;
-    }
-    return(tmp);
+	total = count * size;
+	i = 0;
+	tmp = malloc(total);
+	if (!tmp)
+		return (NULL);
+	while (i < total)
+	{
+		tmp[i] = 0;
+		i++;
+	}
+	return (tmp);
 }
 
 /*

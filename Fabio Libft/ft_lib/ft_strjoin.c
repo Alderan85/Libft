@@ -6,7 +6,7 @@
 /*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:05:48 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/10 16:25:24 by fabnenci         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:05:10 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	char *tmp;
-	size_t i;
-	size_t j;
+	char	*tmp;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-
-	tmp = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
-
+	tmp = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
 	if (!tmp)
-		return(NULL);
-
-	while(s1[i] != '\0')
+		return (NULL);
+	while (s1[i] != '\0')
 	{
 		tmp[i] = s1[i];
 		i++;
@@ -40,8 +37,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		j++;
 	}
 	tmp[j] = '\0';
-
-	return(tmp);
+	return (tmp);
 }
 /*
 int	main()
