@@ -6,7 +6,7 @@
 /*   By: fabnenci <fabnenci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:57:38 by fabnenci          #+#    #+#             */
-/*   Updated: 2024/01/22 16:54:17 by fabnenci         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:47:11 by fabnenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,25 @@ int	ft_intlen(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		len;
-	int		nbr;
+	char		*str;
+	int			len;
+	long		nbr;
 
-	nbr = 0;
+	nbr = n;
 	len = ft_intlen(n);
 	str = (char *)malloc (sizeof(char) * len + 1);
 	if (str == NULL)
 		return (NULL);
-	if (n == 0)
-	{
-		str[nbr] = '0';
-	}
 	if (n < 0)
 	{
-		str[nbr] = '-';
-		n = -n;
+		str[0] = '-';
+		nbr = nbr * -1;
 	}
 	str[len] = '\0';
-	while (n != 0)
+	while (len > 0)
 	{
-		str[len - 1] = (n % 10) + '0';
-		n = n / 10;
-		len--;
+		str[--len] = (nbr % 10) + '0';
+		nbr = nbr / 10;
 	}
 	return (str);
 }
@@ -62,6 +57,6 @@ char	*ft_itoa(int n)
 /*
 int	main()
 {
-	printf("%s",ft_itoa(0));
+	printf("%s",ft_itoa(326523));
 }
 */
