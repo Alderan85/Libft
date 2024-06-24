@@ -9,3 +9,25 @@ t_list *ft_lstlast(t_list *lst)
         tmpnode = tmpnode->next;
     return (tmpnode);
 }
+
+*/
+int main(void)
+{
+    t_list *ONE;
+    t_list *TWO;
+    t_list *BANANA;   
+    t_list *last;
+
+    
+    ONE = ft_lstnew("ONE");
+    TWO = ft_lstnew("TWO");
+    BANANA = ft_lstnew("BANANA");
+    
+    ONE->next = TWO;
+    TWO->next = BANANA;
+    
+    last = ft_lstlast(ONE);
+    printf("%s", (char *)last->content);
+}
+/*
+
