@@ -14,3 +14,17 @@ int ft_lstsize(t_list *lst)
     }
     return (i);
 }
+
+/*
+int main(void)
+{
+     t_list *testone;
+     t_list *testtwo;
+    
+    testone = ft_lstnew("ONE");
+    testtwo = ft_lstnew("TWO");      
+    testone->next = testtwo;
+    int size = ft_lstsize(head);
+    printf( "%d", size); 
+}
+*/
