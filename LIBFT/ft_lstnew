@@ -1,4 +1,3 @@
-
 #include "libft.h"
 
 t_list *ft_lstnew(void *content)
@@ -12,3 +11,13 @@ t_list *ft_lstnew(void *content)
     node->next = NULL;
     return (node);
 }
+
+*/
+int main(void)
+{
+    t_list *node;
+    char *content = "BANANA";
+    node = ft_lstnew(content);
+    printf("%s", (char *)node->content);
+}
+/*
