@@ -24,9 +24,7 @@ int	ft_isdigit(int i)
 	for (int i = 0; i < 127; ++i)
 	{
 		if (ft_isdigit(i))
-			printf("My function-> %c is a digit\n", i);
-		if (isdigit(i))
-			printf("Real function-> %c is a digit\n\n\n", i);
+			printf("%c is a digit\n", i);		
 	}
 }
 */
